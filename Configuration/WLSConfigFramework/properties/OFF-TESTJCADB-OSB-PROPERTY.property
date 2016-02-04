@@ -1,0 +1,19 @@
+# Used to create JCA Connection Factories for DbAdapter
+# All properties are grouped based on common suffix (after last _ ), in current example
+# JCA_DB_CF_EXAMPLE1=aorta.eis.db.xx.cc.CFName (will create a new Connection Factory)
+# JCA_DB_DS_EXAMPLE1=aorta.eis.db.xx.nn.DatasourceName (must be in created on WLS)
+# JCA_DB_XA_EXAMPLE1=XA (XA : then the Connection Facotry will be XA enabled| non-XA or empty :  non-XA ) 
+#
+# JCA_DB_CF_ANOTHERSUFFIX=aorta.eis.db.xx.cc.Name 
+# JCA_DB_DS_ANOTHERSUFFIX=aorta.eis.db.xx.nn.DatasourceName
+# JCA_DB_XA_ANOTHERSUFFIX=
+#
+PROPERTIES_FILE=OFF-TESTJCADB-OSB-PROPERTY.property
+JCA_DB_RAR_LOCAL=/u01/appl/wlsofm/products/middleware/soa/soa/connectors/DbAdapter.rar
+JCA_DB_CF_OFFTestPollerDB=aorta.eis.db.pe.off.AortaTestDB
+JCA_DB_DS_OFFTestPollerDB=aorta.jdbc.pe.Aortatest.AortaTestDataSource
+JCA_DB_XA_OFFTestPollerDB=XA
+JCA_DB_CF_HRDB=aorta.eis.db.pe.HRDB
+JCA_DB_DS_HRDB=aorta.jdbc.pe.Aortatest.HRDataSource
+JCA_DB_XA_HRDB=XA
+

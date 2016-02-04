@@ -1,0 +1,46 @@
+# Used to create JCA Connection Factories for FtpAdapter
+# 
+#  Property PROPERTIES_FILE,  with value the filename (example: OFF-JCAFTP-SOA-PROPERTY.property). 
+#  Property JCA_FTP_RAR_LOCAL with the path the location of the Rar file, on the local box 
+#
+# All properties are grouped based on common suffix (after last _ ), in current example
+# JCA_FTP_CF_EXAMPLE1=aorta.eis.ftp.xx.cc.CFName (will create a new Connection Factory)
+# JCA_FTP_DS_EXAMPLE1=aorta.eis.ftp.xx.nn. (must be in created on WLS)
+# JCA_FTP_XA_EXAMPLE1=XA (XA : then the Connection Facotry will be XA enabled| non-XA or empty :  non-XA ) 
+#
+# JCA_FTP_CF_ANOTHERSUFFIX=aorta.eis.ftp.xx.cc.Name 
+# JCA_FTP_DS_ANOTHERSUFFIX=aorta.eis.ftp.xx.nn.DatasourceName
+# JCA_FTP_XA_ANOTHERSUFFIX=
+#
+PROPERTIES_FILE=OFF-TESTJCAFTP-OSB-PROPERTY.property
+JCA_FTP_RAR_LOCAL=/u01/appl/wlsofm/products/middleware/soa/soa/connectors/FtpAdapter.rar
+
+#SFTP settings (must be a listening sshd server on 172.16.77.109:8000)
+JCA_FTP_CF_00SUFFIX=test/ftp/FtpAdapter
+JCA_FTP_controlDir_00SUFFIX=/u01/appl/wlsofm/user_projects/tmp/controlDir
+JCA_FTP_inboundDataSource_00SUFFIX=aorta.jdbc.pe.off.IntDataDataSource
+JCA_FTP_username_00SUFFIX=ftpoffuser
+JCA_FTP_password_00SUFFIX=ftpoffuser
+JCA_FTP_host_00SUFFIX=172.16.77.109
+JCA_FTP_port_00SUFFIX=8000
+JCA_FTP_useSftp_09SUFFIX=true
+
+
+#Simple FTP Server settings (must be a listening FTP server on 172.16.77.109:2121)
+JCA_FTP_CF_01SUFFIX=aorta.eis.ftp.pe.off.test.AortaFTP
+JCA_FTP_controlDir_01SUFFIX=/u01/appl/wlsofm/user_projects/tmp/controlDir
+JCA_FTP_inboundDataSource_01SUFFIX=aorta.jdbc.pe.off.IntDataDataSource
+JCA_FTP_username_01SUFFIX=ftpoffuser
+JCA_FTP_password_01SUFFIX=ftpoffuser123
+JCA_FTP_host_01SUFFIX=172.16.77.109
+JCA_FTP_port_01SUFFIX=2121
+
+#SFTP settings
+JCA_FTP_CF_02SUFFIX=aorta.eis.sftp.pe.off.test.AortaSFTP
+JCA_FTP_controlDir_02SUFFIX=/u01/appl/wlsofm/user_projects/tmp/controlDir
+JCA_FTP_inboundDataSource_02SUFFIX=aorta.jdbc.pe.off.IntDataDataSource
+JCA_FTP_username_02SUFFIX=ispuser
+JCA_FTP_password_02SUFFIX=ispuser123
+JCA_FTP_host_02SUFFIX=ip-172-31-21-238.eu-west-1.compute.internal
+JCA_FTP_port_02SUFFIX=22
+JCA_FTP_useSftp_02SUFFIX=true

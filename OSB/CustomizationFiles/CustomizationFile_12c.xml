@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cus:Customizations xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+ <!--cus:customization xsi:type="cus:EnvValueCustomizationType">
+	<cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Auditing/Business Service/BS_PE_AuditToDB_db_v1.0</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">jca://upc.eis.db.pe.OffAuditDB</xt:value>
+    </cus:envValueAssignments>
+	<cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>OneFusionTest/Proxy Service/CSpireAdapter/PS_PE_JMSEventCSpire_adapter_1.0</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</xt:value>
+    </cus:envValueAssignments>
+	    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/NetCracker/PS_PE_USMS_NetCracker_Mock</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.NetCrackerRequest</xt:value>
+    </cus:envValueAssignments>
+   
+    <cus:envValueAssignments>
+      <xt:envValueType>JMS Response URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/NetCracker/PS_PE_USMS_NetCracker_Mock</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.NetCrackerResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/CRM/PS_PE_CRM_Request_JMS_Facade_Test_1.1</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.CRMFacadeSimulator</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/NetCracker/BS_PE_USMS_NetCracker_Adapter</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.NetCrackerRequest</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/NetCracker/BS_PE_USMS_NetCracker_Adapter</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.NetCrackerRequest</URI>
+          <weight>0</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>JMS Response URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/NetCracker/BS_PE_USMS_NetCracker_Adapter</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.test.NetCrackerResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/LoopbackSims/IPRequest</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.IPRequest</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/LoopbackSims/VOIPRequest</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_soa}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.VOIPRequest</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/LoopbackSims/VOIPReply</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_soa}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.VOIPReply</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/LoopbackSims/VOIPReply</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{jms_lb_soa}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.VOIPReply</URI>
+          <weight>0</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/CSPIRE/cSPIREStubJMSResponseQueueBS</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/CSPIRE/cSPIREStubJMSResponseQueueBS</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</URI>
+          <weight>0</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/UnitTests/BS_NL_OFF_TestSoapRetry</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{http_lb_soa}/soa-infra/services/test/ServiceBroker/client</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/UnitTests/BS_NL_OFF_TestSoapRetry</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{http_lb_soa}/soa-infra/services/test/ServiceBroker/client</URI>
+          <weight>0</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/LoopbackSims/IPReply</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.IPReply</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/LoopbackSims/IPReply</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.IPReply</URI>
+          <weight>1</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/CSPIRE/cSPIREStubJMSEventTopicBS</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/CSPIRE/cSPIREStubJMSEventTopicBS</xt:path>
+      </xt:owner>
+      <xt:value>
+        <tableElement xmlns="http://www.bea.com/wli/sb/transports">
+          <URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</URI>
+          <weight>1</weight>
+        </tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/CSPIRE/cSPIREStubJMSRequestProxySimple</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireRequest</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Proxy Service/PS_PE_SOAPJMSAsync_Listener_1.0</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.test.AsyncJMSResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>OneFusionTest/Proxy Service/CSpireAdapter/PS_PE_JMSEventCSpire_adapter_1.0</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactory/upc.jms.pe.off.CspireResponse</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>0</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/JMSQueueAB/BS_NL_OFF_QueueAB</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.test.QueueA</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Weight</xt:envValueType>
+      <xt:location>1</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/JMSQueueAB/BS_NL_OFF_QueueAB</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">0</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location>1</xt:location>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/JMSQueueAB/BS_NL_OFF_QueueAB</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.test.QueueB</xt:value>
+    </cus:envValueAssignments>
+    <cus:envValueAssignments>
+      <xt:envValueType>Service URI Table</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>BusinessService</xt:type>
+        <xt:path>Simulators/UnitTestHelpers/Business Service/JMSQueueAB/BS_NL_OFF_QueueAB</xt:path>
+      </xt:owner>
+      <xt:value xmlns:tran="http://www.bea.com/wli/sb/transports">
+        <tran:tableElement>
+          <tran:URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.test.QueueA</tran:URI>
+          <tran:weight>0</tran:weight>
+        </tran:tableElement>
+        <tran:tableElement>
+          <tran:URI>{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.test.QueueB</tran:URI>
+          <tran:weight>0</tran:weight>
+        </tran:tableElement>
+      </xt:value>
+    </cus:envValueAssignments>
+	
+	<cus:envValueAssignments>
+      <xt:envValueType>Service URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>OneFusionTest/Proxy Service/Throttling/SampleThrottledServiceProxy</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCThrottlingConnectionFactoryXA/upc.jms.pe.off.ThrottleFacade</xt:value>
+    </cus:envValueAssignments>
+	 <cus:envValueAssignments>
+      <xt:envValueType>JMS Response URI</xt:envValueType>
+      <xt:location xsi:nil="true"/>
+      <xt:owner>
+        <xt:type>ProxyService</xt:type>
+        <xt:path>OneFusionTest/Proxy Service/Throttling/SampleThrottledServiceProxy</xt:path>
+      </xt:owner>
+      <xt:value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">{jms_lb_osb}/upc.jms.pe.off.JMSUPCConnectionFactoryXA/upc.jms.pe.off.ThrottleFacadeCallback</xt:value>
+    </cus:envValueAssignments>
+    
+    
+  </cus:customization-->
+</cus:Customizations>  
+
+
+
+
+
+

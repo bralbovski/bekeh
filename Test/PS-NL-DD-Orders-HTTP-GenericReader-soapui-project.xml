@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="PS_NL_DD_Orders_HTTP_GenericReader" resourceRoot="" soapui-version="4.6.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="OrdersSOAP" type="wsdl" bindingName="{http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders}OrdersSOAP" soapVersion="1_1" anonymous="optional" definition="http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0?wsdl"><con:part><con:url>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0?wsdl</con:url><con:content><![CDATA[<WL5G3N0:definitions name="Employee" targetNamespace="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:types>
+    <xsd:schema xmlns:ord="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders" schemaLocation="http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com:80/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0?SCHEMA%2FDocdata%2FSchema%2FOrders"/>
+      <!--xsd:element name="SalaryIncreaseByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SalaryIncreaseByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element-->
+    </xsd:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="Orders">
+    <WL5G3N0:part element="WL5G3N1:ORDERS" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="Orders">
+    <WL5G3N0:operation name="NewOrders">
+      <WL5G3N0:input message="WL5G3N1:Orders"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="OrdersSOAP" type="WL5G3N1:Orders">
+    <WL5G3N2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="NewOrders">
+      <WL5G3N2:operation soapAction="NewOrders"/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="OrdersSOAPQSService">
+    <WL5G3N0:port binding="WL5G3N1:OrdersSOAP" name="OrdersSOAPQSPort">
+      <WL5G3N2:address location="http://ip-172-31-6-3.eu-west-1.compute.internal:8001/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com:80/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0?SCHEMA%2FDocdata%2FSchema%2FOrders</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+  <xs:element name="ORDERS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="SALES_ORDER" form="unqualified">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORDER_HEADER" form="unqualified">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ORDER_NR" form="unqualified" type="xs:integer"/>
+                    <xs:element name="LINE_NR" form="unqualified" type="xs:integer"/>
+                    <xs:element name="ORDER_DATE" form="unqualified" type="xs:integer"/>
+                    <xs:element name="DELIVERY_DATE" form="unqualified" type="xs:integer"/>
+                    <xs:element name="ORDER_STAT" form="unqualified" type="xs:string"/>
+                    <xs:element name="ORDER_TYPE" form="unqualified" type="xs:string"/>
+                    <xs:element name="SPLIT_ORDER" form="unqualified" type="xs:string"/>
+                    <xs:element name="CUST_ID" form="unqualified" type="xs:string"/>
+                    <xs:element name="DOCUMENT_CODE" form="unqualified" type="xs:string"/>
+                    <xs:element name="CADEAUX_TEXTS" form="unqualified" type="xs:string"/>
+                    <xs:element name="AIRMILES_NUMBER" form="unqualified" type="xs:string"/>
+                    <xs:element name="CUST_INFORMATION" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DELIVERY_COMPANY_NAME" form="unqualified">
+                            <xs:complexType/>
+                          </xs:element>
+                          <xs:element name="DELIVERY_NAME" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_ADDRESS_1" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_HOUSENR_1" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_ADDRESS_2" form="unqualified">
+                            <xs:complexType/>
+                          </xs:element>
+                          <xs:element name="DELIVERY_ZIP" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_CITY" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_COUNTRY" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_PHONE_NR" form="unqualified" type="xs:integer"/>
+                          <xs:element name="DELIVERY_FAX_NR" form="unqualified" type="xs:integer"/>
+                          <xs:element name="DELIVERY_E-MAIL" form="unqualified" type="xs:string"/>
+                          <xs:element name="DELIVERY_VAT_NR" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_COMPANY_NAME" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_NAME" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_ADDRESS_1" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_HOUSENR_1" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_ADDRESS_2" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_ZIP" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_CITY" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_COUNTRY" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_PHONE_NR" form="unqualified" type="xs:integer"/>
+                          <xs:element name="INVOICE_FAX_NR" form="unqualified" type="xs:string"/>
+                          <xs:element name="INVOICE_E-MAIL" form="unqualified" type="xs:string"/>
+                          <xs:element name="PREFF_LANGUAGE" form="unqualified" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="SHIPPING_INFO" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="EXPRESS_YN" form="unqualified" type="xs:string"/>
+                          <xs:element name="SHIPMENT_CODE" form="unqualified" type="xs:string"/>
+                          <xs:element name="DHL_SERVICEPOINT_ID" form="unqualified" type="xs:string"/>
+                          <xs:element name="SHIPPING_COST_EX_VAT" form="unqualified" type="xs:decimal"/>
+                          <xs:element name="SHIPPING_COST_VAT" form="unqualified" type="xs:decimal"/>
+                          <xs:element name="SHIPPING_COST_INC_VAT" form="unqualified" type="xs:decimal"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PRICE_INFO" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="VAT_PERCENTAGE_LOW" form="unqualified" type="xs:integer"/>
+                          <xs:element name="VAT_PERCENTAGE_HIGH" form="unqualified" type="xs:integer"/>
+                          <xs:element name="CURRENCY" form="unqualified" type="xs:string"/>
+                          <xs:element name="ORDER_DISCOUNT_EX_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="ORDER_DISCOUNT_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="ORDER_DISCOUNT_INC_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="ORDER_DISCOUNT_DESCRIPTION" form="unqualified">
+                            <xs:complexType/>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element maxOccurs="unbounded" name="PAYMENT" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PAYMENT_DESCRIPTION" form="unqualified" type="xs:string"/>
+                          <xs:element name="AMOUNT_INCL_VAT" form="unqualified" type="xs:decimal"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="ORDER_LINE" form="unqualified">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ORDER_LINE_SEQUENCE_NR" form="unqualified" type="xs:integer"/>
+                    <xs:element name="QUANTITY" form="unqualified" type="xs:integer"/>
+                    <xs:element name="ARTICLE_INFO" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ARTICLE_NR" form="unqualified" type="xs:integer"/>
+                          <xs:element name="ARTICLE_DESCRIPTION" form="unqualified" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ARTICLE_PRICE_INFO" form="unqualified">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="UNIT_PRICE_EX_VAT" form="unqualified" type="xs:decimal"/>
+                          <xs:element name="UNIT_PRICE_VAT" form="unqualified" type="xs:decimal"/>
+                          <xs:element name="UNIT_PRICE_INC_VAT" form="unqualified" type="xs:decimal"/>
+                          <xs:element name="UNIT_DISCOUNT_EX_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="UNIT_DISCOUNT_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="UNIT_DISCOUNT_INC_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="UNIT_VAT_HL" form="unqualified" type="xs:string"/>
+                          <xs:element name="DISPOSAL_CONTRIBUTION_EXCL_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="DISPOSAL_CONTRIBUTION_VAT" form="unqualified" type="xs:integer"/>
+                          <xs:element name="DISPOSAL_CONTRIBUTION_INCL_VAT" form="unqualified" type="xs:integer"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint></con:endpoints><con:operation isOneWay="false" action="NewOrders" name="NewOrders" bindingOperationName="NewOrders" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sal="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sal:ORDERS>
+         <!--1 or more repetitions:-->
+         <SALES_ORDER>
+            <ORDER_HEADER>
+               <ORDER_NR>?</ORDER_NR>
+               <LINE_NR>?</LINE_NR>
+               <ORDER_DATE>?</ORDER_DATE>
+               <DELIVERY_DATE>?</DELIVERY_DATE>
+               <ORDER_STAT>?</ORDER_STAT>
+               <ORDER_TYPE>?</ORDER_TYPE>
+               <SPLIT_ORDER>?</SPLIT_ORDER>
+               <CUST_ID>?</CUST_ID>
+               <DOCUMENT_CODE>?</DOCUMENT_CODE>
+               <CADEAUX_TEXTS>?</CADEAUX_TEXTS>
+               <AIRMILES_NUMBER>?</AIRMILES_NUMBER>
+               <CUST_INFORMATION>
+                  <DELIVERY_COMPANY_NAME/>
+                  <DELIVERY_NAME>?</DELIVERY_NAME>
+                  <DELIVERY_ADDRESS_1>?</DELIVERY_ADDRESS_1>
+                  <DELIVERY_HOUSENR_1>?</DELIVERY_HOUSENR_1>
+                  <DELIVERY_ADDRESS_2/>
+                  <DELIVERY_ZIP>?</DELIVERY_ZIP>
+                  <DELIVERY_CITY>?</DELIVERY_CITY>
+                  <DELIVERY_COUNTRY>?</DELIVERY_COUNTRY>
+                  <DELIVERY_PHONE_NR>?</DELIVERY_PHONE_NR>
+                  <DELIVERY_FAX_NR>?</DELIVERY_FAX_NR>
+                  <DELIVERY_E-MAIL>?</DELIVERY_E-MAIL>
+                  <DELIVERY_VAT_NR>?</DELIVERY_VAT_NR>
+                  <INVOICE_COMPANY_NAME>?</INVOICE_COMPANY_NAME>
+                  <INVOICE_NAME>?</INVOICE_NAME>
+                  <INVOICE_ADDRESS_1>?</INVOICE_ADDRESS_1>
+                  <INVOICE_HOUSENR_1>?</INVOICE_HOUSENR_1>
+                  <INVOICE_ADDRESS_2>?</INVOICE_ADDRESS_2>
+                  <INVOICE_ZIP>?</INVOICE_ZIP>
+                  <INVOICE_CITY>?</INVOICE_CITY>
+                  <INVOICE_COUNTRY>?</INVOICE_COUNTRY>
+                  <INVOICE_PHONE_NR>?</INVOICE_PHONE_NR>
+                  <INVOICE_FAX_NR>?</INVOICE_FAX_NR>
+                  <INVOICE_E-MAIL>?</INVOICE_E-MAIL>
+                  <PREFF_LANGUAGE>?</PREFF_LANGUAGE>
+               </CUST_INFORMATION>
+               <SHIPPING_INFO>
+                  <EXPRESS_YN>?</EXPRESS_YN>
+                  <SHIPMENT_CODE>?</SHIPMENT_CODE>
+                  <DHL_SERVICEPOINT_ID>?</DHL_SERVICEPOINT_ID>
+                  <SHIPPING_COST_EX_VAT>?</SHIPPING_COST_EX_VAT>
+                  <SHIPPING_COST_VAT>?</SHIPPING_COST_VAT>
+                  <SHIPPING_COST_INC_VAT>?</SHIPPING_COST_INC_VAT>
+               </SHIPPING_INFO>
+               <PRICE_INFO>
+                  <VAT_PERCENTAGE_LOW>?</VAT_PERCENTAGE_LOW>
+                  <VAT_PERCENTAGE_HIGH>?</VAT_PERCENTAGE_HIGH>
+                  <CURRENCY>?</CURRENCY>
+                  <ORDER_DISCOUNT_EX_VAT>?</ORDER_DISCOUNT_EX_VAT>
+                  <ORDER_DISCOUNT_VAT>?</ORDER_DISCOUNT_VAT>
+                  <ORDER_DISCOUNT_INC_VAT>?</ORDER_DISCOUNT_INC_VAT>
+                  <ORDER_DISCOUNT_DESCRIPTION/>
+               </PRICE_INFO>
+               <!--1 or more repetitions:-->
+               <PAYMENT>
+                  <PAYMENT_DESCRIPTION>?</PAYMENT_DESCRIPTION>
+                  <AMOUNT_INCL_VAT>?</AMOUNT_INCL_VAT>
+               </PAYMENT>
+            </ORDER_HEADER>
+            <!--1 or more repetitions:-->
+            <ORDER_LINE>
+               <ORDER_LINE_SEQUENCE_NR>?</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>?</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>?</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>?</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>?</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>?</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>?</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>?</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>?</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>?</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>?</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>?</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>?</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>?</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+         </SALES_ORDER>
+      </sal:ORDERS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="NewOrders"/><con:wsrmConfig version="1.2"/></con:call><con:call name="SampleXML"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns0:ORDERS>
+         <SALES_ORDER>
+            <ORDER_HEADER xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_NR>117802261</ORDER_NR>
+               <LINE_NR>000</LINE_NR>
+               <ORDER_DATE>20150105</ORDER_DATE>
+               <DELIVERY_DATE>20150107</DELIVERY_DATE>
+               <ORDER_STAT>N</ORDER_STAT>
+               <ORDER_TYPE>WEB</ORDER_TYPE>
+               <SPLIT_ORDER>N</SPLIT_ORDER>
+               <CUST_ID>3v8qqgxp@guest.vd.nl</CUST_ID>
+               <DOCUMENT_CODE>INV</DOCUMENT_CODE>
+               <CADEAUX_TEXTS/>
+               <AIRMILES_NUMBER></AIRMILES_NUMBER>
+               <CUST_INFORMATION>
+                  <DELIVERY_COMPANY_NAME/>
+                  <DELIVERY_NAME>J VAN MONTFORT</DELIVERY_NAME>
+                  <DELIVERY_ADDRESS_1>Bosweg</DELIVERY_ADDRESS_1>
+                  <DELIVERY_HOUSENR_1>3 A</DELIVERY_HOUSENR_1>
+                  <DELIVERY_ADDRESS_2/>
+                  <DELIVERY_ZIP>6112 AC</DELIVERY_ZIP>
+                  <DELIVERY_CITY>SINT JOOST</DELIVERY_CITY>
+                  <DELIVERY_COUNTRY>NL</DELIVERY_COUNTRY>
+                  <DELIVERY_PHONE_NR>0614105150</DELIVERY_PHONE_NR>
+                  <DELIVERY_FAX_NR>09002358363</DELIVERY_FAX_NR>
+                  <DELIVERY_E-MAIL>josevanmontfort@hotmail.com</DELIVERY_E-MAIL>
+                  <DELIVERY_VAT_NR/>
+                  <INVOICE_COMPANY_NAME/>
+                  <INVOICE_NAME>J VAN MONTFORT</INVOICE_NAME>
+                  <INVOICE_ADDRESS_1>Bosweg</INVOICE_ADDRESS_1>
+                  <INVOICE_HOUSENR_1>3 A</INVOICE_HOUSENR_1>
+                  <INVOICE_ADDRESS_2/>
+                  <INVOICE_ZIP>6112 AC</INVOICE_ZIP>
+                  <INVOICE_CITY>SINT JOOST</INVOICE_CITY>
+                  <INVOICE_COUNTRY>NL</INVOICE_COUNTRY>
+                  <INVOICE_PHONE_NR>0614105150</INVOICE_PHONE_NR>
+                  <INVOICE_FAX_NR/>
+                  <INVOICE_E-MAIL/>
+                  <PREFF_LANGUAGE>NL</PREFF_LANGUAGE>
+               </CUST_INFORMATION>
+               <SHIPPING_INFO>
+                  <EXPRESS_YN>N</EXPRESS_YN>
+                  <SHIPMENT_CODE>SV1</SHIPMENT_CODE>
+                  <DHL_SERVICEPOINT_ID/>
+                  <SHIPPING_COST_EX_VAT>0</SHIPPING_COST_EX_VAT>
+                  <SHIPPING_COST_VAT>0</SHIPPING_COST_VAT>
+                  <SHIPPING_COST_INC_VAT>0</SHIPPING_COST_INC_VAT>
+               </SHIPPING_INFO>
+               <PRICE_INFO>
+                  <VAT_PERCENTAGE_LOW>0</VAT_PERCENTAGE_LOW>
+                  <VAT_PERCENTAGE_HIGH>0</VAT_PERCENTAGE_HIGH>
+                  <CURRENCY>EUR</CURRENCY>
+                  <ORDER_DISCOUNT_EX_VAT>0</ORDER_DISCOUNT_EX_VAT>
+                  <ORDER_DISCOUNT_VAT>0</ORDER_DISCOUNT_VAT>
+                  <ORDER_DISCOUNT_INC_VAT>0</ORDER_DISCOUNT_INC_VAT>
+                  <ORDER_DISCOUNT_DESCRIPTION/>
+               </PRICE_INFO>
+               <PAYMENT>
+                  <PAYMENT_DESCRIPTION>ideal</PAYMENT_DESCRIPTION>
+                  <AMOUNT_INCL_VAT>102</AMOUNT_INCL_VAT>
+               </PAYMENT>
+            </ORDER_HEADER>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>1</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171749</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check bordeaux, XXL, Bordeaux</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>2</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171744</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check pink, XXL, Roze</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>3</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34233506</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>HP Seline grey, XXL, Grijs</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>20.66</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>4.34</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>25</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>4</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34183817</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery flower, XXL, D.Blauw</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>5</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171754</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check black, XXL, Zwart</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>6</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34093577</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>Ronnay vest twisted 08, D.ROOD, XXL</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>23.97</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>5.03</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>29</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+         </SALES_ORDER>
+      </ns0:ORDERS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="NewOrders"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Demo1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Demo1a-1-IncorrectXSD" searchProperties="true" id="f975d26c-cb3b-4aa3-8319-273717d52356"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>import java.util.Random
+def uniqueID = testRunner.testCase.getPropertyValue("unique_id")
+Random rand = new Random()   
+int max = 999999999   
+uniqueID = rand.nextInt(max)  
+testRunner.testCase.setPropertyValue("unique_id", uniqueID.toString())</script></con:config></con:testStep><con:testStep type="request" name="Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrdersSOAP</con:interface><con:operation>NewOrders</con:operation><con:request name="Test Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns0:ORDERS>
+         <SALES_ORDER>
+            <ORDER_HEADER xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_NR>${#TestCase#unique_id}</ORDER_NR>
+               <LINE_NR>000</LINE_NR>
+               <ORDER_DATE>20150105</ORDER_DATE>
+               <DELIVERY_DATE>20150307</DELIVERY_DATE>
+               <ORDER_STAT>N</ORDER_STAT>
+               <ORDER_TYPE>WEB</ORDER_TYPE>
+               <SPLIT_ORDER>N</SPLIT_ORDER>
+               <CUST_ID>3v8qqgxp@guest.vd.nl</CUST_ID>
+               <DOCUMENT_CODE>INV</DOCUMENT_CODE>
+               <CADEAUX_TEXTS/>
+               <AIRMILES_NUMBER></AIRMILES_NUMBER>
+               <CUST_INFORMATION>
+                  <DELIVERY_COMPANY_NAME/>
+                  <DELIVERY_NAME>J VAN MONTFORT</DELIVERY_NAME>
+                  <DELIVERY_ADDRESS_1>Bosweg</DELIVERY_ADDRESS_1>
+                  <DELIVERY_HOUSENR_1>3 A</DELIVERY_HOUSENR_1>
+                  <DELIVERY_ADDRESS_2/>
+                  <DELIVERY_ZIP>6112 AC</DELIVERY_ZIP>
+                  <DELIVERY_CITY>SINT JOOST</DELIVERY_CITY>
+                  <DELIVERY_COUNTRY>NL</DELIVERY_COUNTRY>
+                  <DELIVERY_PHONE_NR>0614105150</DELIVERY_PHONE_NR>
+                  <DELIVERY_FAX_NR>09002358363</DELIVERY_FAX_NR>
+                  <DELIVERY_E-MAIL>josevanmontfort@hotmail.com</DELIVERY_E-MAIL>
+                  <DELIVERY_VAT_NR/>
+                  <INVOICE_COMPANY_NAME/>
+                  <INVOICE_NAME>J VAN MONTFORT</INVOICE_NAME>
+                  <INVOICE_ADDRESS_1>Bosweg</INVOICE_ADDRESS_1>
+                  <INVOICE_HOUSENR_1>3 A</INVOICE_HOUSENR_1>
+                  <INVOICE_ADDRESS_2/>
+                  <INVOICE_ZIP>6112 AC</INVOICE_ZIP>
+                  <INVOICE_CITY>SINT JOOST</INVOICE_CITY>
+                  <INVOICE_COUNTRY>NL</INVOICE_COUNTRY>
+                  <INVOICE_PHONE_NR>0614105150</INVOICE_PHONE_NR>
+                  <INVOICE_FAX_NR/>
+                  <INVOICE_E-MAIL/>
+                  <PREFF_LANGUAGE>NL</PREFF_LANGUAGE>
+               </CUST_INFORMATION>
+               <SHIPPING_INFO>
+                  <EXPRESS_YN>N</EXPRESS_YN>
+                  <SHIPMENT_CODE>SV1</SHIPMENT_CODE>
+                  <DHL_SERVICEPOINT_ID/>
+                  <SHIPPING_COST_EX_VAT>0</SHIPPING_COST_EX_VAT>
+                  <SHIPPING_COST_VAT>0</SHIPPING_COST_VAT>
+                  <SHIPPING_COST_INC_VAT>0</SHIPPING_COST_INC_VAT>
+               </SHIPPING_INFO>
+               <PRICE_INFO>
+                  <VAT_PERCENTAGE_LOW>0</VAT_PERCENTAGE_LOW>
+                  <VAT_PERCENTAGE_HIGH>0</VAT_PERCENTAGE_HIGH>
+                  <CURRENCY>EUR</CURRENCY>
+                  <ORDER_DISCOUNT_EX_VAT>0</ORDER_DISCOUNT_EX_VAT>
+                  <ORDER_DISCOUNT_VAT>0</ORDER_DISCOUNT_VAT>
+                  <ORDER_DISCOUNT_INC_VAT>0</ORDER_DISCOUNT_INC_VAT>
+                  <ORDER_DISCOUNT_DESCRIPTION/>
+               </PRICE_INFO>
+               <PAYMENT>
+                  <PAYMENT_DESCRIPTION>ideal</PAYMENT_DESCRIPTION>
+                  <AMOUNT_INCL_VAT>102</AMOUNT_INCL_VAT>
+               </PAYMENT>
+            </ORDER_HEADER>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>1</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171749</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check bordeaux, XXL, Bordeaux</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>2</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171744</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check pink, XXL, Roze</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>3</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34233506</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>HP Seline grey, XXL, Grijs</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>20.66</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>4.34</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>25</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>4</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34183817</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery flower, XXL, D.Blauw</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>5</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171754</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check black, XXL, Zwart</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>6</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34093577</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>Ronnay vest twisted 08, D.ROOD, XXL</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>23.97</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>aa</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>29</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+         </SALES_ORDER>
+      </ns0:ORDERS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>unique_id</con:name><con:value>116546450</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Demo1a-2-PastDeliveryDate" searchProperties="true" id="382644b9-7239-4b4f-86b6-1e4eee23bd2c"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>import java.util.Random    
+def uniqueID = testRunner.testCase.getPropertyValue("unique_id")  
+Random rand = new Random()   
+int max = 999999999   
+uniqueID = rand.nextInt(max)  
+testRunner.testCase.setPropertyValue("unique_id", uniqueID.toString())</script></con:config></con:testStep><con:testStep type="request" name="Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrdersSOAP</con:interface><con:operation>NewOrders</con:operation><con:request name="Test Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns0:ORDERS>
+         <SALES_ORDER>
+            <ORDER_HEADER xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_NR>${#TestCase#unique_id}</ORDER_NR>
+               <LINE_NR>000</LINE_NR>
+               <ORDER_DATE>20150105</ORDER_DATE>
+               <DELIVERY_DATE>20150107</DELIVERY_DATE>
+               <ORDER_STAT>N</ORDER_STAT>
+               <ORDER_TYPE>WEB</ORDER_TYPE>
+               <SPLIT_ORDER>N</SPLIT_ORDER>
+               <CUST_ID>3v8qqgxp@guest.vd.nl</CUST_ID>
+               <DOCUMENT_CODE>INV</DOCUMENT_CODE>
+               <CADEAUX_TEXTS/>
+               <AIRMILES_NUMBER></AIRMILES_NUMBER>
+               <CUST_INFORMATION>
+                  <DELIVERY_COMPANY_NAME/>
+                  <DELIVERY_NAME>J VAN MONTFORT</DELIVERY_NAME>
+                  <DELIVERY_ADDRESS_1>Bosweg</DELIVERY_ADDRESS_1>
+                  <DELIVERY_HOUSENR_1>3 A</DELIVERY_HOUSENR_1>
+                  <DELIVERY_ADDRESS_2/>
+                  <DELIVERY_ZIP>6112 AC</DELIVERY_ZIP>
+                  <DELIVERY_CITY>SINT JOOST</DELIVERY_CITY>
+                  <DELIVERY_COUNTRY>NL</DELIVERY_COUNTRY>
+                  <DELIVERY_PHONE_NR>0614105150</DELIVERY_PHONE_NR>
+                  <DELIVERY_FAX_NR>09002358363</DELIVERY_FAX_NR>
+                  <DELIVERY_E-MAIL>josevanmontfort@hotmail.com</DELIVERY_E-MAIL>
+                  <DELIVERY_VAT_NR/>
+                  <INVOICE_COMPANY_NAME/>
+                  <INVOICE_NAME>J VAN MONTFORT</INVOICE_NAME>
+                  <INVOICE_ADDRESS_1>Bosweg</INVOICE_ADDRESS_1>
+                  <INVOICE_HOUSENR_1>3 A</INVOICE_HOUSENR_1>
+                  <INVOICE_ADDRESS_2/>
+                  <INVOICE_ZIP>6112 AC</INVOICE_ZIP>
+                  <INVOICE_CITY>SINT JOOST</INVOICE_CITY>
+                  <INVOICE_COUNTRY>NL</INVOICE_COUNTRY>
+                  <INVOICE_PHONE_NR>0614105150</INVOICE_PHONE_NR>
+                  <INVOICE_FAX_NR/>
+                  <INVOICE_E-MAIL/>
+                  <PREFF_LANGUAGE>NL</PREFF_LANGUAGE>
+               </CUST_INFORMATION>
+               <SHIPPING_INFO>
+                  <EXPRESS_YN>N</EXPRESS_YN>
+                  <SHIPMENT_CODE>SV1</SHIPMENT_CODE>
+                  <DHL_SERVICEPOINT_ID/>
+                  <SHIPPING_COST_EX_VAT>0</SHIPPING_COST_EX_VAT>
+                  <SHIPPING_COST_VAT>0</SHIPPING_COST_VAT>
+                  <SHIPPING_COST_INC_VAT>0</SHIPPING_COST_INC_VAT>
+               </SHIPPING_INFO>
+               <PRICE_INFO>
+                  <VAT_PERCENTAGE_LOW>0</VAT_PERCENTAGE_LOW>
+                  <VAT_PERCENTAGE_HIGH>0</VAT_PERCENTAGE_HIGH>
+                  <CURRENCY>EUR</CURRENCY>
+                  <ORDER_DISCOUNT_EX_VAT>0</ORDER_DISCOUNT_EX_VAT>
+                  <ORDER_DISCOUNT_VAT>0</ORDER_DISCOUNT_VAT>
+                  <ORDER_DISCOUNT_INC_VAT>0</ORDER_DISCOUNT_INC_VAT>
+                  <ORDER_DISCOUNT_DESCRIPTION/>
+               </PRICE_INFO>
+               <PAYMENT>
+                  <PAYMENT_DESCRIPTION>ideal</PAYMENT_DESCRIPTION>
+                  <AMOUNT_INCL_VAT>102</AMOUNT_INCL_VAT>
+               </PAYMENT>
+            </ORDER_HEADER>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>1</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171749</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check bordeaux, XXL, Bordeaux</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>2</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171744</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check pink, XXL, Roze</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>3</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34233506</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>HP Seline grey, XXL, Grijs</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>20.66</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>4.34</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>25</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>4</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34183817</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery flower, XXL, D.Blauw</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>5</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171754</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check black, XXL, Zwart</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>6</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34093577</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>Ronnay vest twisted 08, D.ROOD, XXL</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>23.97</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>5.03</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>29</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+         </SALES_ORDER>
+      </ns0:ORDERS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>unique_id</con:name><con:value>11408257</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Demo1a-3-CorrectXSD" searchProperties="true" id="7d59d09b-defb-46b1-9e55-6f316771ef4e"><con:settings/><con:testStep type="groovy" name="Groovy Script"><con:settings/><con:config><script>import java.util.Random    
+def uniqueID = testRunner.testCase.getPropertyValue("unique_id")  
+Random rand = new Random()   
+int max = 999999999   
+uniqueID = rand.nextInt(max)  
+testRunner.testCase.setPropertyValue("unique_id", uniqueID.toString())</script></con:config></con:testStep><con:testStep type="request" name="Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OrdersSOAP</con:interface><con:operation>NewOrders</con:operation><con:request name="Test Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://aorta3-service-430555114.eu-west-1.elb.amazonaws.com/Docdata/Proxy_Service/PS_NL_DD_Orders_HTTP_GenericReader_1.0</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrders">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns0:ORDERS>
+         <SALES_ORDER>
+            <ORDER_HEADER xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_NR>${#TestCase#unique_id}</ORDER_NR>
+               <LINE_NR>000</LINE_NR>
+               <ORDER_DATE>20150105</ORDER_DATE>
+               <DELIVERY_DATE>20150307</DELIVERY_DATE>
+               <ORDER_STAT>N</ORDER_STAT>
+               <ORDER_TYPE>WEB</ORDER_TYPE>
+               <SPLIT_ORDER>N</SPLIT_ORDER>
+               <CUST_ID>3v8qqgxp@guest.vd.nl</CUST_ID>
+               <DOCUMENT_CODE>INV</DOCUMENT_CODE>
+               <CADEAUX_TEXTS/>
+               <AIRMILES_NUMBER></AIRMILES_NUMBER>
+               <CUST_INFORMATION>
+                  <DELIVERY_COMPANY_NAME/>
+                  <DELIVERY_NAME>J VAN MONTFORT</DELIVERY_NAME>
+                  <DELIVERY_ADDRESS_1>Bosweg</DELIVERY_ADDRESS_1>
+                  <DELIVERY_HOUSENR_1>3 A</DELIVERY_HOUSENR_1>
+                  <DELIVERY_ADDRESS_2/>
+                  <DELIVERY_ZIP>6112 AC</DELIVERY_ZIP>
+                  <DELIVERY_CITY>SINT JOOST</DELIVERY_CITY>
+                  <DELIVERY_COUNTRY>NL</DELIVERY_COUNTRY>
+                  <DELIVERY_PHONE_NR>0614105150</DELIVERY_PHONE_NR>
+                  <DELIVERY_FAX_NR>09002358363</DELIVERY_FAX_NR>
+                  <DELIVERY_E-MAIL>josevanmontfort@hotmail.com</DELIVERY_E-MAIL>
+                  <DELIVERY_VAT_NR/>
+                  <INVOICE_COMPANY_NAME/>
+                  <INVOICE_NAME>J VAN MONTFORT</INVOICE_NAME>
+                  <INVOICE_ADDRESS_1>Bosweg</INVOICE_ADDRESS_1>
+                  <INVOICE_HOUSENR_1>3 A</INVOICE_HOUSENR_1>
+                  <INVOICE_ADDRESS_2/>
+                  <INVOICE_ZIP>6112 AC</INVOICE_ZIP>
+                  <INVOICE_CITY>SINT JOOST</INVOICE_CITY>
+                  <INVOICE_COUNTRY>NL</INVOICE_COUNTRY>
+                  <INVOICE_PHONE_NR>0614105150</INVOICE_PHONE_NR>
+                  <INVOICE_FAX_NR/>
+                  <INVOICE_E-MAIL/>
+                  <PREFF_LANGUAGE>NL</PREFF_LANGUAGE>
+               </CUST_INFORMATION>
+               <SHIPPING_INFO>
+                  <EXPRESS_YN>N</EXPRESS_YN>
+                  <SHIPMENT_CODE>SV1</SHIPMENT_CODE>
+                  <DHL_SERVICEPOINT_ID/>
+                  <SHIPPING_COST_EX_VAT>0</SHIPPING_COST_EX_VAT>
+                  <SHIPPING_COST_VAT>0</SHIPPING_COST_VAT>
+                  <SHIPPING_COST_INC_VAT>0</SHIPPING_COST_INC_VAT>
+               </SHIPPING_INFO>
+               <PRICE_INFO>
+                  <VAT_PERCENTAGE_LOW>0</VAT_PERCENTAGE_LOW>
+                  <VAT_PERCENTAGE_HIGH>0</VAT_PERCENTAGE_HIGH>
+                  <CURRENCY>EUR</CURRENCY>
+                  <ORDER_DISCOUNT_EX_VAT>0</ORDER_DISCOUNT_EX_VAT>
+                  <ORDER_DISCOUNT_VAT>0</ORDER_DISCOUNT_VAT>
+                  <ORDER_DISCOUNT_INC_VAT>0</ORDER_DISCOUNT_INC_VAT>
+                  <ORDER_DISCOUNT_DESCRIPTION/>
+               </PRICE_INFO>
+               <PAYMENT>
+                  <PAYMENT_DESCRIPTION>ideal</PAYMENT_DESCRIPTION>
+                  <AMOUNT_INCL_VAT>102</AMOUNT_INCL_VAT>
+               </PAYMENT>
+            </ORDER_HEADER>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>1</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171749</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check bordeaux, XXL, Bordeaux</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>2</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171744</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check pink, XXL, Roze</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>3</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34233506</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>HP Seline grey, XXL, Grijs</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>20.66</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>4.34</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>25</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>4</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34183817</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery flower, XXL, D.Blauw</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>5</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34171754</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>LB Chery check black, XXL, Zwart</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>9.92</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>2.08</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>12</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+            <ORDER_LINE xmlns:ns0="http://schemas.vroomdreesmann.nl/e-commerce/SalesOrdersSingle">
+               <ORDER_LINE_SEQUENCE_NR>6</ORDER_LINE_SEQUENCE_NR>
+               <QUANTITY>1</QUANTITY>
+               <ARTICLE_INFO>
+                  <ARTICLE_NR>34093577</ARTICLE_NR>
+                  <ARTICLE_DESCRIPTION>Ronnay vest twisted 08, D.ROOD, XXL</ARTICLE_DESCRIPTION>
+               </ARTICLE_INFO>
+               <ARTICLE_PRICE_INFO>
+                  <UNIT_PRICE_EX_VAT>23.97</UNIT_PRICE_EX_VAT>
+                  <UNIT_PRICE_VAT>5.03</UNIT_PRICE_VAT>
+                  <UNIT_PRICE_INC_VAT>29</UNIT_PRICE_INC_VAT>
+                  <UNIT_DISCOUNT_EX_VAT>0</UNIT_DISCOUNT_EX_VAT>
+                  <UNIT_DISCOUNT_VAT>0</UNIT_DISCOUNT_VAT>
+                  <UNIT_DISCOUNT_INC_VAT>0</UNIT_DISCOUNT_INC_VAT>
+                  <UNIT_VAT_HL>H</UNIT_VAT_HL>
+                  <DISPOSAL_CONTRIBUTION_EXCL_VAT>0</DISPOSAL_CONTRIBUTION_EXCL_VAT>
+                  <DISPOSAL_CONTRIBUTION_VAT>0</DISPOSAL_CONTRIBUTION_VAT>
+                  <DISPOSAL_CONTRIBUTION_INCL_VAT>0</DISPOSAL_CONTRIBUTION_INCL_VAT>
+               </ARTICLE_PRICE_INFO>
+            </ORDER_LINE>
+         </SALES_ORDER>
+      </ns0:ORDERS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>unique_id</con:name><con:value>793720742</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>

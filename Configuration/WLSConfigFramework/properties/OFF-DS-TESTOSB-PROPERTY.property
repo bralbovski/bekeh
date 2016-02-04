@@ -1,0 +1,40 @@
+# Used to create DataSources in the OSB OFF Domain
+# 
+# This property file should be used with the relevant template (OFF-DS-ALL-TEMPLATE.py )
+# The template requires PROPERTIES_FILE property as the name of this file.
+# 
+# All properties are grouped based on common suffix (after last _ ), in current setting :
+# JDBC_DATASOURCE_NAME_DS_OffAuditDataSource=aorta.jdbc.pe.off.OffAuditDataSource 
+# the suffix is OffAuditDataSource for the first data source. (and nunmbers or names for the rest)
+#
+# Changing the default passwords is applied by external scripts, they must append DB_PASSWORD_DS_* 
+# for each datasource (and replace * with the suffix).
+#
+# For OFF, if you add another Datasource, you must also configure 
+# /CIO_PE/Configuration/WLSConfigFramework/configure_off_env.sh
+#
+PROPERTIES_FILE=OFF-DS-TESTOSB-PROPERTY.property
+
+#AortaTestDataSource
+JDBC_DATASOURCE_NAME_DS_OFFTestDataSource=aorta.jdbc.pe.Aortatest.AortaTestDataSource
+JNDI_DATASOURCE_NAME_DS_OFFTestDataSource=aorta.jdbc.pe.Aortatest.AortaTestDataSource
+DB_URL_DS_OFFTestDataSource=jdbc:oracle:thin:@db01.offdev.tmns.test:1522:offdev
+DB_USER_DS_OFFTestDataSource=refdata
+DB_DRIVER_DS_OFFTestDataSource=oracle.jdbc.xa.client.OracleXADataSource
+ConnectionCreationRetryFrequencySeconds_DS_OFFTestDataSource=10
+SecondsToTrustAnIdlePoolConnection_DS_OFFTestDataSource=0
+TestConnectionsOnReserve_DS_OFFTestDataSource=true
+TestFrequencySeconds_DS_OFFTestDataSource=5
+DB_PASSWORD_DS_OFFTestDataSource=refdata123
+
+#HRDataSource
+JDBC_DATASOURCE_NAME_DS_HRDataSource=aorta.jdbc.pe.Aortatest.HRDataSource
+JNDI_DATASOURCE_NAME_DS_HRDataSource=aorta.jdbc.pe.Aortatest.HRDataSource
+DB_URL_DS_HRDataSource=jdbc:oracle:thin:@db01.offdev.tmns.test:1522:offdev
+DB_USER_DS_HRDataSource=hr
+DB_DRIVER_DS_HRDataSource=oracle.jdbc.xa.client.OracleXADataSource
+ConnectionCreationRetryFrequencySeconds_DS_HRDataSource=10
+SecondsToTrustAnIdlePoolConnection_DS_HRDataSource=0
+TestConnectionsOnReserve_DS_HRDataSource=true
+TestFrequencySeconds_DS_HRDataSource=5
+DB_PASSWORD_DS_HRDataSource=aortapoc
